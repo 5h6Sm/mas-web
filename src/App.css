@@ -1,3 +1,7 @@
+@font-face {
+  font-family: TimesNewRoman;
+  src: url(./fonts/TimesNewRoman.ttf);
+}
 .App {
   text-align: center;
 }
@@ -47,6 +51,7 @@
 }
 
 body{
+  font-family: TimesNewRoman;
   background-color: #000;
   height:max-content;
   margin: 0;
@@ -64,14 +69,14 @@ body{
   text-align: right;
 }
 .all_wrapper{
-  width:75.7%;
+  width:75.4%;
   height:max-content;
 }
 .top{
   width:100%;
-  padding:50px 0 50px 0;
+  padding:70px 0 25px 0;
   display: flex;
-  justify-content:space-between;
+  justify-content:space-between;  background-color: #000;
 }
 .line{
   width:100%;
@@ -146,43 +151,31 @@ body{
   font-weight: bold;
 }
 .text_img{
-  margin-left:75%;
-  position: fixed;
+  margin-top:5%;
+  margin-left:50vw;
 }
 .op>div{
   display: flex;
   align-items: center;
 }
-.navigation-text1{
+.navigation-text{
   text-align: right;
   height: fit-content;
   width: fit-content;
   margin-top: -50%;
   margin-left: -120px;
 }
-.navigation-text2{
+.text{
+  margin-right:20%;
+  font-size: 1vw;
+}
+.op{
+  font-size: 1vw;
+  margin-bottom: 0.5vw;
+  /* margin-bottom: 0.5vw; */
   text-align: right;
-  height: fit-content;
-  width: fit-content;
-  margin-top: -50%;
-  margin-left: -120px;
 }
-.navigation-text3{
-  text-align: right;
-  height: fit-content;
-  width: fit-content;
-  margin-top: -50%;
-  margin-left: -120px;
-}
-.text1{
-  margin-right:20%;
-  font-size: 1vw;
-}
-.text2{
-  margin-right:20%;
-  font-size: 1vw;
-}
-.text3{
-  margin-right:20%;
-  font-size: 1vw;
+.MAS2ND{
+  font-weight: 500;
+  font-size: 3vw;
 }

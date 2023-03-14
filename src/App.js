@@ -18,7 +18,7 @@ function Top(){
     <div className='all_wrapper'>
        <div class="top">
             <div class="top_text">
-                <h1>MAS 2ND:<br/>PROJECT</h1>
+                <div class="MAS2ND">MAS 2ND:<br/>PROJECT</div>
             </div>
             <div class="text_img">
               
@@ -39,12 +39,12 @@ function Top(){
                     <AnimatePresence>
                       {isVisible1 && (
                         <motion.div
-                          className="navigation-text1"
+                          className="navigation-text"
                           initial={{ x: 50, opacity: 0 }}
                           animate={{ x: 0, opacity: 3 }}
                           exit={{ x: -30, opacity: 0 }}
                           transition={{ duration: 1 }}>
-                          <span className="text1">ABOUT</span>
+                          <span className="text">ABOUT</span>
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -65,12 +65,12 @@ function Top(){
                           <AnimatePresence>
                             {isVisible2 && (
                               <motion.div
-                                className="navigation-text2"
+                                className="navigation-text"
                                 initial={{ x: 50, opacity: 0 }}
                                 animate={{ x: 0, opacity: 3 }}
                                 exit={{ x: -30, opacity: 0 }}
                                 transition={{ duration: 1 }}>
-                                <span className="text2">MEMBER</span>
+                                <span className="text">MEMBER</span>
                               </motion.div>
                             )}
                           </AnimatePresence>
@@ -91,12 +91,12 @@ function Top(){
                       <AnimatePresence>
                         {isVisible3 && (
                           <motion.div
-                            className="navigation-text3"
+                            className="navigation-text"
                             initial={{ x: 50, opacity: 0 }}
                             animate={{ x: 0, opacity: 3 }}
                             exit={{ x: -30, opacity: 0 }}
                             transition={{ duration: 1 }}>
-                            <span className="text3">PROJECT</span>
+                            <span className="text">PROJECT</span>
                           </motion.div>
                         )}
                       </AnimatePresence>
@@ -108,24 +108,9 @@ function Top(){
   )
 }
 
-function Line(){
-  return (
-    <div className="App-Navigation-line">
-      <div
-        style={{
-          width: "100%",
-          borderBottom: "1px dashed #aaa",
-          lineHeight: "0.1em"
-        }}
-      >
-      </div>
-    </div>
-  )
-}
 
 function Main(){
   return (
-    
     <div className='all_wrapper'>
       <motion.div
         initial={{ y: 30, opacity: 0 }}
@@ -188,7 +173,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Top />
-        <Line />
         <Main />
       </header>
     </div>

@@ -166,7 +166,7 @@ body{
   margin-left: -120px;
 }
 .text{
-  margin-right:20%;
+  margin-right:25%;
   font-size: 1vw;
 }
 .op{
@@ -174,6 +174,7 @@ body{
   margin-bottom: 0.5vw;
   /* margin-bottom: 0.5vw; */
   text-align: right;
+  display: flex;
 }
 .MAS2ND{
   font-weight: 500;

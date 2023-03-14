@@ -1,50 +1,102 @@
 import './App.css';
-import './index.css'
 
 import React from 'react';
 import { useState } from 'react';
 import {motion, AnimatePresence} from "framer-motion"
 
 import sun from './images/sun.png'
+import star from './images/star.png';
+import moon from './images/moon.png';
+import top from './images/upButton.png';
 
 function Top(){
   const [isVisible, setIsVisible] = useState(false);
   return (
     <div className='all_wrapper'>
-    
        <div class="top">
             <div class="top_text">
                 <h1>MAS 2ND:<br/>PROJECT</h1>
             </div>
             <div class="text_img">
                 <div class="op">
-                  <div>
+                    <div>
+                    {/* 해버튼 마우스 닿을 시 글자 나옴 */}
                     <motion.div
-                      whileHover = {{scale:1.1}}
-                      transition={{type:"spring", stiffness: 200, damping:10}}>
-                        <motion.a
-                          onHoverStar={()=>{setIsVisible(true)}}
-                          onHoverEnd={()=>{setIsVisible(false)}}
-                          >
-                            <a href=''><img src = {sun} alt="ABOUT" className='buttons' styles={'width=50px;'}/></a>
-                          </motion.a>
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ type: "spring", stiffness: 200, damping: 10 }}>
+                      <motion.a
+                        onHoverStart={() => { setIsVisible(true) }}
+                        onHoverEnd={() => { setIsVisible(false) }}
+                      >
+                        <a href=''><img src={sun} alt="ABOUT" className="buttons" /></a><br />
+                      </motion.a>
+                    </motion.div>
+                    <AnimatePresence>
+                      {isVisible && (
+                        <motion.div
+                          className="navigation-text"
+                          initial={{ x: 50, opacity: 0 }}
+                          animate={{ x: 0, opacity: 3 }}
+                          exit={{ x: -30, opacity: 0 }}
+                          transition={{ duration: 1 }}>
+                          <span className="text">ABOUT</span>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </div>
+                <div class="op">
+                        <div>
+                          <motion.div
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ type: "spring", stiffness: 200, damping: 10 }}>
+                            <motion.a
+                              onHoverStart={() => { setIsVisible(true) }}
+                              onHoverEnd={() => { setIsVisible(false) }}
+                            >
+                              <a href=''><img src={star} alt="MEMBER" className="buttons" /></a><br />
+                            </motion.a>
                           </motion.div>
                           <AnimatePresence>
-                            {isVisible &&(
+                            {isVisible && (
                               <motion.div
-                              className = "navigation-text"
-                              initial={{x:50, opacity:0}}
-                              animate={{x:0, opacity:3}}
-                              exit={{x:-30, opacity:0}}
-                              transtion={{duration:1}}>
-                                <span className='text'>ABOUT</span>
+                                className="navigation-text"
+                                initial={{ x: 50, opacity: 0 }}
+                                animate={{ x: 0, opacity: 3 }}
+                                exit={{ x: -30, opacity: 0 }}
+                                transition={{ duration: 1 }}>
+                                <span className="text">MEMBER</span>
                               </motion.div>
                             )}
                           </AnimatePresence>
-                  </div>
+                        </div>
                 </div>
-                <div class="op">🔅</div>
-                <div class="op">🔅</div>
+                <div class="op">
+                    <div>
+                      <motion.div
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ type: "spring", stiffness: 200, damping: 10 }}>
+                        <motion.a
+                          onHoverStart={() => { setIsVisible(true) }}
+                          onHoverEnd={() => { setIsVisible(false) }}
+                        >
+                          <a href=''><img src={moon} alt="PROJECT" className="buttons" /></a><br />
+                        </motion.a>
+                      </motion.div>
+                      <AnimatePresence>
+                        {isVisible && (
+                          <motion.div
+                            className="navigation-text"
+                            initial={{ x: 50, opacity: 0 }}
+                            animate={{ x: 0, opacity: 3 }}
+                            exit={{ x: -30, opacity: 0 }}
+                            transition={{ duration: 1 }}>
+                            <span className="text">PROJECT</span>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

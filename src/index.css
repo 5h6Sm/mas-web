@@ -18,6 +18,9 @@ body {
   margin: 0;
   text-align: left;
 }
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
 
 body{
   background-color: #000;
@@ -37,7 +40,7 @@ body{
   text-align: right;
 }
 .all_wrapper{
-  width:80%;
+  width:75.7%;
   height:max-content;
 }
 .top{
@@ -62,6 +65,7 @@ body{
 .project_pre{
   width: 70%;
   height:fit-content;
+  padding-left: 1vw;
 }
 .project_pic{
   width:90%;

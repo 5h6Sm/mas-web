@@ -145,17 +145,6 @@ body{
 .project_name{
   font-weight: bold;
 }
-.navigation-text{
-  text-align: right;
-  height: fit-content;
-  width: fit-content;
-  margin-top: -50%;
-  margin-left: -120px;
-}
-.text{
-  margin-right:20%;
-  font-size: 1vw;
-}
 .text_img{
   margin-left:75%;
   position: fixed;
@@ -163,4 +152,37 @@ body{
 .op>div{
   display: flex;
   align-items: center;
+}
+.navigation-text1{
+  text-align: right;
+  height: fit-content;
+  width: fit-content;
+  margin-top: -50%;
+  margin-left: -120px;
+}
+.navigation-text2{
+  text-align: right;
+  height: fit-content;
+  width: fit-content;
+  margin-top: -50%;
+  margin-left: -120px;
+}
+.navigation-text3{
+  text-align: right;
+  height: fit-content;
+  width: fit-content;
+  margin-top: -50%;
+  margin-left: -120px;
+}
+.text1{
+  margin-right:20%;
+  font-size: 1vw;
+}
+.text2{
+  margin-right:20%;
+  font-size: 1vw;
+}
+.text3{
+  margin-right:20%;
+  font-size: 1vw;
 }

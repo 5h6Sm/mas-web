@@ -1,17 +1,50 @@
 import './App.css';
 import './index.css'
 
+import React from 'react';
+import { useState } from 'react';
+import {motion, AnimatePresence} from "framer-motion"
+
+import sun from './images/sun.png'
+
 function Top(){
+  const [isVisible, setIsVisible] = useState(false);
   return (
     <div className='all_wrapper'>
+    
        <div class="top">
             <div class="top_text">
                 <h1>MAS 2ND:<br/>PROJECT</h1>
             </div>
             <div class="text_img">
-                <div class="op">about 🔅</div>
-                <div class="op">memeber 🔅</div>
-                <div class="op">project 🔅</div>
+                <div class="op">
+                  <div>
+                    <motion.div
+                      whileHover = {{scale:1.1}}
+                      transition={{type:"spring", stiffness: 200, damping:10}}>
+                        <motion.a
+                          onHoverStar={()=>{setIsVisible(true)}}
+                          onHoverEnd={()=>{setIsVisible(false)}}
+                          >
+                            <a href=''><img src = {sun} alt="ABOUT" className='buttons' styles={'width=50px;'}/></a>
+                          </motion.a>
+                          </motion.div>
+                          <AnimatePresence>
+                            {isVisible &&(
+                              <motion.div
+                              className = "navigation-text"
+                              initial={{x:50, opacity:0}}
+                              animate={{x:0, opacity:3}}
+                              exit={{x:-30, opacity:0}}
+                              transtion={{duration:1}}>
+                                <span className='text'>ABOUT</span>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                  </div>
+                </div>
+                <div class="op">🔅</div>
+                <div class="op">🔅</div>
             </div>
         </div>
     </div>

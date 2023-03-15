@@ -1,6 +1,7 @@
 @font-face {
   font-family: TimesNewRoman;
   src: url(./fonts/TimesNewRoman.ttf);
+
 }
 .App {
   text-align: center;
@@ -45,6 +46,7 @@
   padding: 0;
   margin: 0;
   text-align: left;
+  
 }
 *::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera*/
@@ -179,4 +181,14 @@ body{
 .MAS2ND{
   font-weight: 500;
   font-size: 3vw;
+}
+.select_project>div{
+  opacity: 0.5;
+}
+.project_num{
+  opacity: 0.5;
+}
+.end{
+  opacity: 1;
+  transition: opacity 0.5s; 
 }

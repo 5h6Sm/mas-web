@@ -9,6 +9,8 @@ import star from './images/star.png';
 import moon from './images/moon.png';
 import top from './images/upButton.png';
 
+// import MyComponent from './component/main.jsx'
+
 function Top(){
   const [isVisible1, setIsVisible1] = useState('');
   const [isVisible2, setIsVisible2] = useState('');
@@ -110,6 +112,7 @@ function Top(){
 
 
 function Main(){
+  const [isVisible, setIsVisible1] = useState('');
   return (
     <div className='all_wrapper'>
       <motion.div
@@ -141,7 +144,19 @@ function Main(){
                         <div class="project_info_side">
                             <div class="project_title">PROJECT</div>
                             <div class="select_project">
+                        <div>
+                          <motion.div
+                          initial={{ opacity: 0, scale: 0.5 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{type:"spring", stiffness:200, damping:10}}>
+                            <motion.a
+                              onHoverStart={() => { setIsVisible1(true) }}
+                              onHoverEnd={() => { setIsVisible1(false) }}
+                            >
                                 <div class="per_project">개인프로젝트 </div>
+                                </motion.a>
+                                </motion.div>
+                                </div>
                                 <div>&nbsp; | &nbsp;</div>
                                 <div class="org_project"> 단체프로젝트</div>
                             </div>

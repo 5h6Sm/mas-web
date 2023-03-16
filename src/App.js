@@ -1,3 +1,4 @@
+import { useMotionValue, useTransform , useCycle} from "framer-motion";
 import './App.css';
 
 import React from 'react';
@@ -8,6 +9,64 @@ import sun from './images/sun.png'
 import star from './images/star.png';
 import moon from './images/moon.png';
 import top from './images/upButton.png';
+
+
+const MyComponent = () => {
+  const [isToggled, setIsToggled] = useState(false);
+
+  const opacity = useMotionValue(0.5);
+  const opacityHover = useTransform(opacity, [0.5, 1], [0.5, 1]);
+  const opacityTap = useTransform(opacity, [0.5, 1], [0.6, 1]);
+
+  const handleClick = () => {
+    setIsToggled(!isToggled);
+  };
+
+  return (
+    <motion.div
+      style={{ opacity }}
+      whileHover={opacityHover}
+      whileTap={opacityTap}
+      onClick={handleClick}
+    >
+    </motion.div>
+  );
+};
+
+function Component(){
+  const [isActive, setIsActive] = useState(false);
+
+  const toggleActive = () => {
+    setIsActive(!isActive);
+  };
+
+  return(
+    <motion.div 
+      animate={{ opacity: isActive ? 1 : 0.5 }}
+      whileHover={{ opacity: 1 }}
+      whileTap={{ opacity: 1 }}
+      onClick={toggleActive}
+      >
+      <div class="per_project">개인프로젝트 </div>
+    </motion.div>
+  )
+}
+
+function MyComponent2() {
+  const [isHovered, toggleHover] = useCycle(false, true);
+
+  return (
+    <motion.div
+      whileHover={{ opacity: 1 }}
+      whileTap={{ opacity: 1 }}
+      animate={{ opacity: isHovered ? 1 : 0.5 }}
+      onClick={() => toggleHover()}
+    >
+      {/* 컨텐츠 */}
+    </motion.div>
+  );
+}
+
 
 function Top(){
   const [isVisible1, setIsVisible1] = useState('');
@@ -39,12 +98,12 @@ function Top(){
                     <AnimatePresence>
                       {isVisible1 && (
                         <motion.div
-                          className="navigation-text1"
+                          className="navigation-text"
                           initial={{ x: 50, opacity: 0 }}
                           animate={{ x: 0, opacity: 3 }}
                           exit={{ x: -30, opacity: 0 }}
                           transition={{ duration: 1 }}>
-                          <span className="text1">ABOUT</span>
+                          <span className="text">ABOUT</span>
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -65,12 +124,12 @@ function Top(){
                           <AnimatePresence>
                             {isVisible2 && (
                               <motion.div
-                                className="navigation-text2"
+                                className="navigation-text"
                                 initial={{ x: 50, opacity: 0 }}
                                 animate={{ x: 0, opacity: 3 }}
                                 exit={{ x: -30, opacity: 0 }}
                                 transition={{ duration: 1 }}>
-                                <span className="text2">MEMBER</span>
+                                <span className="text">MEMBER</span>
                               </motion.div>
                             )}
                           </AnimatePresence>
@@ -91,12 +150,12 @@ function Top(){
                       <AnimatePresence>
                         {isVisible3 && (
                           <motion.div
-                            className="navigation-text3"
+                            className="navigation-text"
                             initial={{ x: 50, opacity: 0 }}
                             animate={{ x: 0, opacity: 3 }}
                             exit={{ x: -30, opacity: 0 }}
                             transition={{ duration: 1 }}>
-                            <span className="text3">PROJECT</span>
+                            <span className="text">PROJECT</span>
                           </motion.div>
                         )}
                       </AnimatePresence>
@@ -124,6 +183,26 @@ function Line(){
 }
 
 function Main(){
+
+  const [isActive1, setIsActive1] = useState(false);
+  const [isActive2, setIsActive2] = useState(false);
+  const [isActive3, setIsActive3] = useState(false);
+  const [isActive4, setIsActive4] = useState(false);
+  
+
+  const toggleActive1 = () => {
+    setIsActive1(!isActive1);
+  };
+  const toggleActive2 = () => {
+    setIsActive2(!isActive2);
+  };
+  const toggleActive3 = () => {
+    setIsActive3(!isActive3);
+  };
+  const toggleActive4 = () => {
+    setIsActive4(!isActive4);
+  };
+
   return (
     
     <div className='all_wrapper'>
@@ -156,22 +235,50 @@ function Main(){
                         <div class="project_info_side">
                             <div class="project_title">PROJECT</div>
                             <div class="select_project">
+                            <motion.div 
+                                animate={{ opacity: isActive1 ? 1 : 0.5 }}
+                                whileHover={{ opacity: 1 }}
+                                whileTap={{ opacity: 1 }}
+                                onClick={toggleActive1}
+                                >
                                 <div class="per_project">개인프로젝트 </div>
+                              </motion.div>
                                 <div>&nbsp; | &nbsp;</div>
+                                <motion.div 
+                                  animate={{ opacity: isActive2 ? 1 : 0.5 }}
+                                  whileHover={{ opacity: 1 }}
+                                  whileTap={{ opacity: 1 }}
+                                  onClick={toggleActive2}
+                                >
                                 <div class="org_project"> 단체프로젝트</div>
+                                </motion.div>
                             </div>
+                            <motion.div 
+                                  animate={{ opacity: isActive3 ? 1 : 0.5 }}
+                                  whileHover={{ opacity: 1 }}
+                                  whileTap={{ opacity: 1 }}
+                                  onClick={toggleActive3}
+                                >
                             <div class="project_num">
                                 <div class="seme_title">2022 1학기</div>
                                 <div class="using_tool">Adobe illustrator</div>
                                 <div class="using_tool">Adobe photoshop</div>
                                 <div class="text_project_name">프로젝트 이름을 쓰세요</div>
                             </div>
+                              </motion.div>
+                              <motion.div 
+                                  animate={{ opacity: isActive4 ? 1 : 0.5 }}
+                                  whileHover={{ opacity: 1 }}
+                                  whileTap={{ opacity: 1 }}
+                                  onClick={toggleActive4}
+                                >
                             <div class="project_num">
                                 <div class="seme_title">2022 1학기</div>
                                 <div class="using_tool">Adobe illustrator</div>
                                 <div class="using_tool">리스트 간격은 46px</div>
                                 <div class="text_project_name">프로젝트 이름을 쓰세요</div>
                             </div>
+                            </motion.div>
                         </div>
 
                     </div>
@@ -188,6 +295,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Top />
+        <MyComponent/>
         <Line />
         <Main />
       </header>
